@@ -5,6 +5,8 @@
 \usepackage{graphicx}
 \usepackage{wrapfig}
 
+\usepackage{microtype}
+
 \usepackage{mhsetup}
 \usepackage{mathtools}
 
@@ -132,7 +134,7 @@ Combine equations \eqref{eq:t1} and \eqref{eq:t2} and solve for \(D\).
 
 As the wavelength \(\lambda\) is constant for each tuning fork, we can safely assume that Equation \eqref{eq:a1} is linear. As such, \(\frac{\lambda}{4}\) is the gradient of the linear function, and the error correction \(x\) is the \textit{y}-intercept of the function. As such, for brevity we do the following substitution:
 
-\begin{equation}
+\begin{equation} \label{eq:a2}
   m = \frac{\lambda}{4}
 \end{equation}  
 
@@ -149,6 +151,7 @@ With the data from \ref{table:d3} (and after converting the measurements to metr
 
 Now, get the value of both \(m\) and \(x\) for Figure \ref{fig:plot1}, and calculate its uncertainties.
 
+% rewrite the following working as it is a big mess
 \begin{align*}
   m &= \frac{\SI{0.81}{m} - \SI{0.15}{m}}{5 - 1} \\
   &= \SI{0.165}{m}
@@ -162,6 +165,18 @@ Now, get the value of both \(m\) and \(x\) for Figure \ref{fig:plot1}, and calcu
 \begin{equation*}
   \therefore m = \SI{0.165(5)}{m}
 \end{equation*}
+
+With \eqref{eq:a2}, find \(\lambda\) using the above data for Experiment 4.
+
+\begin{align}
+  \begin{split}
+    m &= \frac{\lambda}{4} \\
+    \lambda &= 4m
+  \end{split}
+  \begin{split}
+    
+  \end{split}
+\end{align}
 
 By observation,
 \begin{align*}
