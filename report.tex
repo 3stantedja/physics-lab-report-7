@@ -4,6 +4,7 @@
 \usepackage{tikz}
 \usepackage{graphicx}
 \usepackage{wrapfig}
+\usepackage{booktabs}
 
 \usepackage{microtype}
 
@@ -19,6 +20,8 @@
 
 \sisetup{separate-uncertainty,multi-part-units=single}
 \numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
 \graphicspath{ {./images/} }
 
 \title{Experiment 7 — Standing waves in water}
@@ -82,10 +85,10 @@ After that, we repeated the above procedures for every tuning fork that was prov
   \centering
   \begin{tabular}{|c|l|l|}
     \hline
-    Experiment no.  & Note value            & Frequency (\(f\))/\si{Hz} \\
+    Experiment no.  & Note value            & Frequency (\(f\))/\(\pm 0.1\) \si{Hz} \\
     \hline
     1               & \(\mathrm{F}_4\)      & 349.2 \\
-    2               & \(\sim \mathrm{G}_4\) & 392 \\
+    2               & \(\sim \mathrm{G}_4\) & 392.0 \\
     3               & \(\sim \mathrm{A}_4\) & 486.7 \\
     4               & \(\mathrm{C}_5\)      & 523.2 \\
     \hline
@@ -140,8 +143,6 @@ As the wavelength \(\lambda\) is constant for each tuning fork, we can safely as
 
 With the data from \ref{table:d3} (and after converting the measurements to metres) and Equation \eqref{eq:a1}, we were able to draw Figure \ref{fig:plot1} of \(D_4\) as a function of \(N\).
 
-\pagebreak
-
 \begin{figure}[!h]
   \centering
   \includegraphics[width=0.75\textwidth]{plot_pdf.png}
@@ -149,36 +150,48 @@ With the data from \ref{table:d3} (and after converting the measurements to metr
   \label{fig:plot1}
 \end{figure}
 
-Now, get the value of both \(m\) and \(x\) for Figure \ref{fig:plot1}, and calculate its uncertainties.
+Now, find out the gradient \(m\) for Experiment 4.
 
-% rewrite the following working as it is a big mess
 \begin{align*}
-  m &= \frac{\SI{0.81}{m} - \SI{0.15}{m}}{5 - 1} \\
-  &= \SI{0.165}{m}
-\end{align*}
-\begin{align*}
-  \delta m &= m_{\mathrm{best}} - m_{\mathrm{min}} \\
-  &= \frac{\SI{0.81}{m} - \SI{0.15}{m}}{5 - 1} - \frac{\SI{0.80}{m} - \SI{0.14}{m}}{5 - 1} \\
-  &= \SI{0.165}{m} - \SI{0.16}{m} \\
-  &= \SI{0.005}{m}
-\end{align*}
-\begin{equation*}
-  \therefore m = \SI{0.165(5)}{m}
-\end{equation*}
-
-With \eqref{eq:a2}, find \(\lambda\) using the above data for Experiment 4.
-
-\begin{align}
   \begin{split}
-    m &= \frac{\lambda}{4} \\
-    \lambda &= 4m
+    m_4 &= \frac{\SI{0.81}{m} - \SI{0.15}{m}}{5 - 1} \\
+    &= \SI{0.165}{m}
   \end{split}
   \begin{split}
-    
+    \delta m &= m_{\mathrm{best}} - m_{\mathrm{min}} \\
+    &= \frac{\SI{0.81}{m} - \SI{0.15}{m}}{5 - 1} - \frac{\SI{0.80}{m} - \SI{0.14}{m}}{5 - 1} \\
+    &= \SI{0.165}{m} - \SI{0.16}{m} \\
+    &= \SI{0.005}{m}
   \end{split}
+\end{align*}
+
+\[\therefore m_4 = \SI{0.165(5)}{m}\]
+
+\pagebreak
+
+With \eqref{eq:a2}, find \(\lambda\) using the value of \(m\) for Experiment 4.
+\begin{align} \label{eq:a3}
+  m &= \frac{\lambda}{4} \notag \\
+  \lambda &= 4m
 \end{align}
 
-By observation,
+\nopagebreak
+
+\begin{align*}
+  \begin{split}
+    \lambda_4 &= 4m_4 \quad \text{[with \eqref{eq:a3}]} \\
+    \lambda_4 &= 4(\SI{0.165}{m}) \\
+    &= \SI{0.66}{m}
+  \end{split}
+  \begin{split}
+    \delta \lambda &= |4| \delta m \\
+    &= |4| (\SI{0.005}{m}) \\
+    &= \SI{0.02}{m}
+  \end{split}
+\end{align*}
+\[\therefore \lambda_4 = \SI{0.66(2)}{m}\]
+
+From Figure \ref{fig:plot1}, get the value of \(x\) along with its uncertainty.
 \begin{align*}
   x &= \SI{-0.015}{m}, \\
   x_\mathrm{min} &= \SI{0}{m}
@@ -188,13 +201,51 @@ By observation,
   &= |\SI{-0.015}{m} - \SI{0}{m}| \\
   &\approx \SI{0.02}{m}
 \end{align*}
-\begin{equation*}
-  \therefore x = \SI{-0.02(2)}{m}
-\end{equation*}
+\[\therefore x = \SI{-0.02(2)}{m}\]
 
 For the rest of the experimental data (Experiment 1 to 3), we assume that the best-fit line goes through the two data points. The uncertainties for the values of \(\lambda\) and \(x\) can be assumed to be similar, if not identical, for all forks. Because of that, the calculations needed to determine \(m\) and \(x\) quite similar to the calculations done for Experiment 4. The following is an example calculation for Experiment 1:
 
+\begin{align*}
+  \begin{split}
+    m_1 &= \frac{\SI{0.73}{m} - \SI{0.21}{m}}{3 - 1} \\
+    &= \SI{0.26}{m}
+  \end{split} 
+  \begin{split}
+    \lambda_1 &= 4((\SI{0.26}{m}) \\
+    &= \SI{1.04(2)}{m}
+  \end{split} \\
+\end{align*}
+\begin{equation*}
+  \begin{split}
+    D_1 &= m_1 N + x_1 \\ 
+    x_1 &= D_1 - m_1 N \\
+    &= \SI{0.73}{m} - (\SI{0.26}{m})(3) \\
+    &= \SI{-0.05(2)}{m}
+  \end{split}
+\end{equation*}
 
+% TODO: description of table
+Table \ref{table:a1} shows the result of the calculations done on experiments 1 - 3, along with Experiment 4.
+
+% Table
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|l|l|l|l|l|}
+    \hline
+    Experiment & \(f\) & \(\lambda\) & \(x\) & \(v\) \\
+    \hline
+    1 & 2 & 3 & 4 & 5 \\
+    \hline
+  \end{tabular}
+  \caption{Processed data}
+  \label{table:a1}
+\end{table}
+
+The speed of sound for each experiment is found using 
+\begin{equation}
+v = f \lambda
+\end{equation}
+and inputting the values of \(f\) and \(\lambda\) for each experiment. From the \(v\) values in Table \ref{table:a1}, we can find the average value of \(v\) along with its \(\delta v\).
 \section{Discussion}
 
 
