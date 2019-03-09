@@ -24,6 +24,7 @@
 \numberwithin{table}{section}
 \graphicspath{ {./images/} }
 
+
 \title{Experiment 7 — Standing waves in water}
 \author{Laurence Amadeus Tristan, Nero Su, Weihong Deng}
 \date{28/02/2019}
@@ -55,7 +56,7 @@ Note that the length of the air column \(L\) does not equal to the length of the
   L = D + x
 \end{equation}
 
-\begin{tabbing}
+\begin{tabbing} \nopagebreak[3]
   where \= \(L\) \= = length of air column \\
   \> \(D\) \> = length of the air chamber, \\
   \> \(x\) \> = end correction.
@@ -64,7 +65,7 @@ Note that the length of the air column \(L\) does not equal to the length of the
 The end correction \(x\) is constant. This value depends on the diameter of the tube and the particular sound frequency that is made by the source, and cannot be dependent on the resonance order \(N\).
 
 \section{Procedure}
-\begin{wrapfigure}{r}{0.4\textwidth} 
+\begin{wrapfigure}{r}{0.4\textwidth}
   \centering
   \includegraphics[width=0.4\textwidth]{drawing.png}
   \caption{Diagram of the apparatus}
@@ -82,10 +83,11 @@ After that, we repeated the above procedures for every tuning fork that was prov
 \pagebreak
 \section{Data}
 \begin{table}[!h]
+  \setlength\extrarowheight{2.5pt}
   \centering
   \begin{tabular}{|c|l|l|}
     \hline
-    Experiment no.  & Note value            & Frequency (\(f\))/\(\pm 0.1\) \si{Hz} \\
+    Experiment      & Note value            & Frequency (\(f\))/\(\pm 0.1\) \si{Hz} \\
     \hline
     1               & \(\mathrm{F}_4\)      & 349.2 \\
     2               & \(\sim \mathrm{G}_4\) & 392.0 \\
@@ -98,6 +100,7 @@ After that, we repeated the above procedures for every tuning fork that was prov
 \end{table}
 
 \begin{table}[!h]
+  \setlength\extrarowheight{2.5pt}
   \centering
   \begin{tabular}{|l|l|l|}
     \hline
@@ -113,6 +116,7 @@ After that, we repeated the above procedures for every tuning fork that was prov
 \end{table}
 
 \begin{table}[!h]
+  \setlength\extrarowheight{2.5pt}
   \centering
   \begin{tabular}{|l|l|l|l|l|}
     \hline
@@ -136,11 +140,13 @@ Combine equations \eqref{eq:t1} and \eqref{eq:t2} and solve for \(D\).
   D &= N \left(\frac{\lambda}{4} \right) - x
 \end{align}
 
-As the wavelength \(\lambda\) is constant for each tuning fork, we can safely assume that Equation \eqref{eq:a1} is linear. As such, \(\frac{\lambda}{4}\) is the gradient of the linear function, and the error correction \(x\) is the \textit{y}-intercept of the function. As such, for brevity we do the following substitution:
+\pagebreak[3]
+
+As the wavelength \(\lambda\) is constant for each tuning fork, we can safely assume that Equation \eqref{eq:a1} is linear. As such, \(\frac{\lambda}{4}\) is the gradient of the linear function, and the error correction \(x\) is the \textit{y}-intercept of the function. As such, for brevity we do the following substitution: \nopagebreak[4]
 
 \begin{equation} \label{eq:a2}
   m = \frac{\lambda}{4}
-\end{equation}  
+\end{equation}
 
 With the data from \ref{table:d3} (and after converting the measurements to metres) and Equation \eqref{eq:a1}, we were able to draw Figure \ref{fig:plot1} of \(D_4\) as a function of \(N\).
 
@@ -194,23 +200,23 @@ With \eqref{eq:a2}, find \(\lambda\) using the value of \(m\) for Experiment 4.
 
 From Figure \ref{fig:plot1}, get the value of \(x\) along with its uncertainty.
 \begin{align*}
-  x &= \SI{-0.015}{m}, \\
+  x &= \SI{0.015}{m}, \\
   x_\mathrm{min} &= \SI{0}{m}
 \end{align*}
 \begin{align*}
   \delta x &= |x_{\mathrm{best}} - x_{\mathrm{min}}| \\
-  &= |\SI{-0.015}{m} - \SI{0}{m}| \\
+  &= |\SI{0.015}{m} - \SI{0}{m}| \\
   &\approx \SI{0.02}{m}
 \end{align*}
-\[\therefore x = \SI{-0.02(2)}{m}\]
+\[\therefore x = \SI{0.02(2)}{m}\]
 
-For the rest of the experimental data (Experiment 1 to 3), we assume that the best-fit line goes through the two data points. The uncertainties for the values of \(\lambda\) and \(x\) can be assumed to be similar, if not identical, for all forks. Because of that, the calculations needed to determine \(m\) and \(x\) quite similar to the calculations done for Experiment 4. The following is an example calculation for Experiment 1:
+For the rest of the experimental data (Experiment 1 to 3), we assume that the best-fit line goes through the two data points. The uncertainties for the values of \(\lambda\) and \(x\) can be assumed to be similar, if not identical, for all forks. Because of that, the calculations needed to determine \(m\), \(\lambda\), and \(x\) are quite similar to the calculations done for Experiment 4. The following is an example calculation for Experiment 1:
 
 \begin{align*}
   \begin{split}
     m_1 &= \frac{\SI{0.73}{m} - \SI{0.21}{m}}{3 - 1} \\
     &= \SI{0.26}{m}
-  \end{split} 
+  \end{split}
   \begin{split}
     \lambda_1 &= 4((\SI{0.26}{m}) \\
     &= \SI{1.04(2)}{m}
@@ -218,37 +224,59 @@ For the rest of the experimental data (Experiment 1 to 3), we assume that the be
 \end{align*}
 \begin{equation*}
   \begin{split}
-    D_1 &= m_1 N + x_1 \\ 
-    x_1 &= D_1 - m_1 N \\
-    &= \SI{0.73}{m} - (\SI{0.26}{m})(3) \\
-    &= \SI{-0.05(2)}{m}
+    D_1 &= m_1 N - x_1 \\
+    x_1 &= -D_1 + m_1 N \\
+    &= \SI{-0.73}{m} + (\SI{0.26}{m})(3) \\
+    &= \SI{0.05(2)}{m}
   \end{split}
 \end{equation*}
 
 % TODO: better description of table 5.1 (table:a1), revise text before rewrite.
-Table \ref{table:a1} shows the result of the calculations done on experiments 1 - 3, along with Experiment 4.
+Note that in the case for Experiments 1--3, the values above for \(m, \ \lambda, \) and \(x\) are determined algrbraically (unlike Experiment 4).
 
 % TODO: complete the table
 \begin{table}[h]
+  \setlength\extrarowheight{2.5pt}
   \centering
-  \begin{tabular}{|l|l|l|l|l|}
+  \begin{tabular}{|c|l|l|l|l|}
     \hline
-    Experiment & \(f\) & \(\lambda\) & \(x\) & \(v\) \\
+    Experiment & {\(f\)/\si{\hertz} }& {\(\lambda\)/\si{m}} & {\(x\)/\si{m}} & {\(v\)/\si{m.s^{-1}}} \\
     \hline
-    1 & 2 & 3 & 4 & 5 \\
+    1 & \num{349.2(1)} & \num{1.04(2)} & \num{0.05(2)} & \num{363(7)} \\
+    2 & \num{392.0(1)} & \num{0.88(2)} & \num{0.01(2)} & \num{345(8)} \\
+    3 & \num{486.7(1)} & \num{0.80(2)} & \num{0.01(2)} & \num{390(10)} \\
+    4 & \num{523.2(1)} & \num{0.66(2)} & \num{0.02(2)} & \num{350(10)} \\
     \hline
   \end{tabular}
   \caption{Processed data}
   \label{table:a1}
 \end{table}
 
-The speed of sound for each experiment is found using 
+The speed of sound \(v\) for each experiment is found using
+\begin{align} \label{eq:a4}
+  \begin{split}
+    v = f \lambda
+  \end{split}
+  \begin{split}
+    \delta v = v \left(\frac{\SI{0.1}{Hz}}{f} + \frac{\SI{0.02}{m}}{\lambda} \right)
+  \end{split}
+\end{align}
+and inputting the values of \(f\) and \(\lambda\) for each experiment, accounting for the uncertainties for both \(f\) and \(\lambda\). From the \(v\) values in Table \ref{table:a1}, we can find the mean of \(v\) along with its uncertainty, where the uncertainty for \(\bar{v}\) is defined as the difference between the mean and the furthermost value of v.
 
-\begin{equation} \label{eq:a4}
-v = f \lambda
-\end{equation}
+\begin{align*}
+  \begin{split}
+    \bar{v} &= \frac{\SI{363}{\metre\per\second} + \SI{345}{\metre\per\second} + \SI{390}{\metre\per\second} + \SI{350}{\metre\per\second}}{4} \\
+    &= \SI{362}{\metre\per\second}
+  \end{split} \\
+  \begin{split}
+    \delta \bar{v} &= \bar{v} - v_3 \\
+    &= |\SI{362}{\metre\per\second} - \SI{390}{\metre\per\second}| \\
+    &= \SI{28}{\metre\per\second} \\
+    &\approx \SI{30}{\metre\per\second}
+  \end{split}
+\end{align*}
+\[\therefore \bar{v} = \SI{360(30)}{\metre\per\second}\]
 
-and inputting the values of \(f\) and \(\lambda\) for each experiment. From the \(v\) values in Table \ref{table:a1}, we can find the average value of \(v\) along with its \(\delta v\).
 \section{Discussion}
 
 
