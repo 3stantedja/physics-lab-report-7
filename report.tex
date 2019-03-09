@@ -17,8 +17,14 @@
 
 \usepackage[parfill]{parskip}
 \usepackage{array}
+\usepackage{multirow}
 
-\sisetup{separate-uncertainty,multi-part-units=single}
+\sisetup{
+  separate-uncertainty,
+  multi-part-units = brackets,
+  bracket-numbers,
+  sticky-per
+}
 \numberwithin{equation}{section}
 \numberwithin{figure}{section}
 \numberwithin{table}{section}
@@ -85,7 +91,7 @@ After that, we repeated the above procedures for every tuning fork that was prov
 \begin{table}[!h]
   \setlength\extrarowheight{2.5pt}
   \centering
-  \begin{tabular}{|c|l|l|}
+  \begin{tabular}{|c|c|c|}
     \hline
     Experiment      & Note value            & Frequency (\(f\))/\(\pm 0.1\) \si{Hz} \\
     \hline
@@ -102,7 +108,7 @@ After that, we repeated the above procedures for every tuning fork that was prov
 \begin{table}[!h]
   \setlength\extrarowheight{2.5pt}
   \centering
-  \begin{tabular}{|l|l|l|}
+  \begin{tabular}{|c|c|l|}
     \hline
     Variable  & Value                       & Description\\
     \hline
@@ -118,7 +124,7 @@ After that, we repeated the above procedures for every tuning fork that was prov
 \begin{table}[!h]
   \setlength\extrarowheight{2.5pt}
   \centering
-  \begin{tabular}{|l|l|l|l|l|}
+  \begin{tabular}{|c|c|c|c|c|}
     \hline
     \(N\) & \(D_1 / \pm 1\) \si{cm} & \(D_2 / \pm 1\) \si{cm} & \(D_3 / \pm 1\) \si{cm} & \(D_4 / \pm 1\) \si{cm} \\
     \hline
@@ -132,7 +138,7 @@ After that, we repeated the above procedures for every tuning fork that was prov
 \end{table}
 
 \section{Analysis}
-Combine equations \eqref{eq:t1} and \eqref{eq:t2} and solve for \(D\).
+Combine \eqref{eq:t1} and \eqref{eq:t2} and solve for \(D\).
 
 \begin{align} \label{eq:a1}
   \frac{N \lambda}{4} &= D + x \notag \\
@@ -142,13 +148,13 @@ Combine equations \eqref{eq:t1} and \eqref{eq:t2} and solve for \(D\).
 
 \pagebreak[3]
 
-As the wavelength \(\lambda\) is constant for each tuning fork, we can safely assume that Equation \eqref{eq:a1} is linear. As such, \(\frac{\lambda}{4}\) is the gradient of the linear function, and the error correction \(x\) is the \textit{y}-intercept of the function. As such, for brevity we do the following substitution: \nopagebreak[4]
+As the wavelength \(\lambda\) is constant for each tuning fork, we can safely assume that Equation \ref{eq:a1} is linear. As such, \(\frac{\lambda}{4}\) is the gradient of the linear function, and the error correction \(x\) is the \textit{y}-intercept of the function. As such, for brevity we do the following substitution: \nopagebreak[4]
 
 \begin{equation} \label{eq:a2}
   m = \frac{\lambda}{4}
 \end{equation}
 
-With the data from \ref{table:d3} (and after converting the measurements to metres) and Equation \eqref{eq:a1}, we were able to draw Figure \ref{fig:plot1} of \(D_4\) as a function of \(N\).
+With the data from Table \ref{table:d3} (and after converting the measurements to metres) and Equation \ref{eq:a1}, we were able to draw Figure \ref{fig:plot1} of \(D_4\) as a function of \(N\).
 
 \begin{figure}[!h]
   \centering
@@ -218,7 +224,7 @@ For the rest of the experimental data (Experiment 1 to 3), we assume that the be
     &= \SI{0.26}{m}
   \end{split}
   \begin{split}
-    \lambda_1 &= 4((\SI{0.26}{m}) \\
+    \lambda_1 &= 4(\SI{0.26}{m}) \\
     &= \SI{1.04(2)}{m}
   \end{split} \\
 \end{align*}
@@ -231,14 +237,12 @@ For the rest of the experimental data (Experiment 1 to 3), we assume that the be
   \end{split}
 \end{equation*}
 
-% TODO: better description of table 5.1 (table:a1), revise text before rewrite.
 Note that in the case for Experiments 1--3, the values above for \(m, \ \lambda, \) and \(x\) are determined algrbraically (unlike Experiment 4).
 
-% TODO: complete the table
 \begin{table}[h]
   \setlength\extrarowheight{2.5pt}
   \centering
-  \begin{tabular}{|c|l|l|l|l|}
+  \begin{tabular}{|c|c|c|c|c|}
     \hline
     Experiment & {\(f\)/\si{\hertz} }& {\(\lambda\)/\si{m}} & {\(x\)/\si{m}} & {\(v\)/\si{m.s^{-1}}} \\
     \hline
@@ -248,7 +252,7 @@ Note that in the case for Experiments 1--3, the values above for \(m, \ \lambda,
     4 & \num{523.2(1)} & \num{0.66(2)} & \num{0.02(2)} & \num{350(10)} \\
     \hline
   \end{tabular}
-  \caption{Processed data}
+  \caption{Processed experimental data}
   \label{table:a1}
 \end{table}
 
@@ -261,7 +265,7 @@ The speed of sound \(v\) for each experiment is found using
     \delta v = v \left(\frac{\SI{0.1}{Hz}}{f} + \frac{\SI{0.02}{m}}{\lambda} \right)
   \end{split}
 \end{align}
-and inputting the values of \(f\) and \(\lambda\) for each experiment, accounting for the uncertainties for both \(f\) and \(\lambda\). From the \(v\) values in Table \ref{table:a1}, we can find the mean of \(v\) along with its uncertainty, where the uncertainty for \(\bar{v}\) is defined as the difference between the mean and the furthermost value of v.
+and inputting the values of \(f\) and \(\lambda\) for each experiment, accounting for the uncertainties for both \(f\) and \(\lambda\). From the \(v\) values in Table \ref{table:a1}, we can find the mean of \(v\) along with its uncertainty.
 
 \begin{align*}
   \begin{split}
@@ -269,15 +273,109 @@ and inputting the values of \(f\) and \(\lambda\) for each experiment, accountin
     &= \SI{362}{\metre\per\second}
   \end{split} \\
   \begin{split}
-    \delta \bar{v} &= \bar{v} - v_3 \\
-    &= |\SI{362}{\metre\per\second} - \SI{390}{\metre\per\second}| \\
-    &= \SI{28}{\metre\per\second} \\
-    &\approx \SI{30}{\metre\per\second}
+    \delta \bar{v} &= \frac{1}{4} (\delta v_1 + \delta v_2 + \delta v_3 + \delta v_4) \\
+    &= \frac{1}{4} (\SI{7}{\metre\per\second} + \SI{8}{\metre\per\second} + \SI{10}{\metre\per\second} + \SI{10}{\metre\per\second}) \\
+    &= \SI{8.75}{\metre} \\
+    &\approx \SI{9}{\metre}
   \end{split}
 \end{align*}
-\[\therefore \bar{v} = \SI{360(30)}{\metre\per\second}\]
+\[\therefore \bar{v} = \SI{362(9)}{\metre\per\second}\]
+
+Now, let's compare \(\bar{v}\) to the theoretical value of the speed of sound \(v_{\mathrm{s}}\) at \SI{24}{\celsius}. From Table \ref{table:d2}, at \SI{0}{\celsius} (\SI{273}{\kelvin}) the speed of sound \(v_0\) is \SI{331}{\metre\per\second}. This value depends on the average velocity of the air particles. As temperature increases the average velocity increases as well, which means the speed of sound increases with temperature too. To fiugre out the speed of sound at the temperature \(T\) (in kelvins), we use the following formula:
+
+\begin{equation} \label{eq:a5}
+  v_{\mathrm{s}} = v_0 \sqrt{\frac{T}{\SI{273}{\kelvin}}}
+\end{equation}
+
+\begin{tabbing}
+  where \= \(v_{\mathrm{s}}\) \= = speed of sound at temperature \(T\), \\
+  \> \(v_0\) \> = speed of sound at \SI{273}{\kelvin}, \\
+  \> \(T\) \> = temperature of room in kelvins.
+\end{tabbing}
+
+After converting the value of \(T_C\) to kelvins, find the theoretical speed of sound at the room temperature.
+
+\begin{align} \label{eq:a6}
+  T &= 273 + T_C \\
+  &= 273 + 24 \notag \\
+  &= \SI{297(1)}{\kelvin} & \text{[uncertainty remains identical]} \notag
+\end{align}
+From \eqref{eq:a5} and data from both Table \ref{table:d2} and the calculation above,
+\begin{align*}
+  \begin{split}
+    v_{\mathrm{s}} &= \SI{331}{\metre\per\second} \sqrt{\frac{\SI{297}{\kelvin}}{\SI{273}{\kelvin}}} \\
+    &= \SI{345.2430104}{\metre\per\second}
+  \end{split}
+  \begin{split}
+    \delta v_{\mathrm{s}} &= v_{\mathrm{s}} \left[\frac{1}{2} \left( \frac{\SI{1}{\kelvin}}{\SI{297}{\kelvin}} \right)  \right] \\
+    &= \SI{0.5812171893}{\metre\per\second} \\
+    &\approx \SI{0.6}{\metre\per\second}
+  \end{split}
+\end{align*}
+\[\therefore v_{\mathrm{s}} = \SI{345.2(6)}{\metre\per\second}.\]
+
+Find out how far our experimentally-derived speed of sound \(\bar{v}\) is from the theoretical speed of sound \(v_{\mathrm{s}}\).
+
+\begin{align*}
+  \mathrm{\%\ Discrepancy} &= \frac{\SI{362}{\metre\per\second} - \SI{345.2}{\metre\per\second}}{\SI{345.2}{\metre\per\second}} \times 100 \\
+  &\approx 4.9\%
+\end{align*}
+
+For the end correction \(x\), we can compare those experimental values with an approximate, like the following:
+
+\begin{equation} \label{eq:a7}
+  x_{\mathrm{approx}} \approx 0.82r
+\end{equation}
+
+\begin{tabbing}
+  where \= \(x_{\mathrm{approx}}\) \= = end correction, \\
+  \> \(r\) \> = radius of tube.
+\end{tabbing}
+
+In our case we are going to intepret "radius of tube" to mean the inner radius of the resonance tube, which we have measured in Section 3 as the inner diameter of the tube (Table \ref{table:d2}). However we need to get the inner radius of the tube.
+
+\begin{align*}
+  d &= 2r \\
+  r &= \frac{d}{2} \\
+  &= \frac{\SI{3.366(2)d-2}{\metre}}{2} \\
+  &= \SI{1.683(1)d-2}{\metre}
+\end{align*}
+
+Using \eqref{eq:a7} and \(r\), get an approximation of \(x\) based on the inner radius of the tube. Note that since this is an approximation we shall drop the uncertainty as it will give a false sense of accuracy.
+\nopagebreak[3]
+\begin{align*}
+  x_{\mathrm{approx}} &\approx 0.82(\SI{1.683d-2}{\metre}) \\
+  &= \SI{1.3801d-2}{\metre}
+\end{align*}
+
+After that we calculate the difference between the \(x\)-values for each frequency with the approximation that we have obtained.
+
+\begin{table}[!h]
+  \setlength\extrarowheight{2.5pt}
+  \centering
+  \begin{tabular}{|c|c|c|}
+    \hline
+    Experiment & {\(x\)/\(\pm 0.02\) \si{\metre}} & Difference/\si{m} \\
+    \hline
+    1 & 0.05 & 0.04 \\
+    2 & 0.01 & 0.004 \\
+    3 & 0.01 & 0.004 \\
+    4 & 0.02 & 0.006 \\
+    \hline
+  \end{tabular}
+  \label{table:a2}
+  \caption{Difference of the value of the end correction \(x\) between experimental result and the approximation suggested by \eqref{eq:a7}}
+\end{table}
+
+To calculate:
+
+\begin{equation}
+  \text{Difference} = |x - x_{\mathrm{approx}}|
+\end{equation}
 
 \section{Discussion}
+In this experiment, we attempted to measure the speed of sound \(v\) by examining the resonances of an open-ended resonance tube. We did this by first manipulating Equation \ref{eq:t1} and \ref{eq:t2} to produce \eqref{eq:a1} along with \eqref{eq:a2}. Then, we figure out the values of \(m\) and \(x\) and used those values along with Equation \ref{eq:a3} \(\lambda\). With \eqref{eq:a4} \(\lambda\) is then used (along with its corresponding \(f\)) to find the speed of sound for each experiment/frequency, which then used to find \(\bar{v}\). We then compared the mean speed of sound \(\bar{v}\) with a theoretical value of the speed of sound \(v_\mathrm{s}\). Lastly we then compared the end corrections that we got for each frequencies with an approximation that has been suggested.
+
 
 
 \end{document}
