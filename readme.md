@@ -19,3 +19,7 @@ The following packages are in use:
 $ pdflatex report.tex
 ```
 Run twice so the references show up --- otherwise it'll just show as (??).
+
+## To-do
+- upload Mathematica notebook
+- add appendix
